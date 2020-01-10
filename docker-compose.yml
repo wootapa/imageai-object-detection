@@ -1,0 +1,16 @@
+version: '3'
+services:
+    imageai-object-detection:
+        build: .
+        image: imageai-object-detection
+        restart: always
+        container_name: imageai-object-detection
+        ports:
+            - '8089:5000'
+        environment:
+            - ISYOLO=1
+            - ISRETINANET=0
+        volumes:
+            - './volumes/app:/opt/app'
+            - './volumes/models/yolo:/opt/model'
+            #- './volumes/models/retinanet:/opt/model'
