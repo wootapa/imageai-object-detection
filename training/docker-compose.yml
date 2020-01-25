@@ -1,0 +1,17 @@
+version: '3'
+services:
+    imageai-object-training:
+        build: .
+        image: imageai-object-training
+        restart: always
+        container_name: imageai-object-training
+        environment:
+            - DOTRAIN=1
+            - DOEVALUATE=1
+            - OBJECT_NAMES=bird
+            - DORESUMELAST=0
+            - DOTRANSFERLEARN=0
+        volumes:
+            - './volumes/app:/opt/app'
+            - './volumes/images/bird:/opt/training'
+            - './volumes/model:/opt/model'

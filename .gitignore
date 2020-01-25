@@ -2,3 +2,6 @@
 .vscode
 volumes/models/retinanet/
 volumes/models/yolo/
+training/volumes/images/*
+training/volumes/model/*
+!README.md
